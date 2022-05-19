@@ -1,6 +1,7 @@
+// for centering the entire element in the middle
 function Container({ children }) {
   return (
-    <div className="flex  h-screen w-screen items-center justify-center bg-[#16181d]">
+    <div className="flex flex-col h-screen w-screen items-center justify-center bg-[#16181d]">
       {children}
     </div>
   );
