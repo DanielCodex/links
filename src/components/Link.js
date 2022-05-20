@@ -14,7 +14,7 @@ function Link({ link, children }) {
       href={link}
       target="_blank"
       rel="noreferrer"
-      className="mb-2 mt-2 flex w-1/2 items-center justify-center rounded-lg  p-2 dark:bg-[#1a1d23] shadow-2xl"
+      className="mb-2 mt-2 flex w-1/2 items-center justify-center rounded-lg  p-2 dark:bg-[#1a1d23] shadow-2xl "
     >
       {children}
     </motion.a>

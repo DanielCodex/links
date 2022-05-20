@@ -27,16 +27,21 @@ const App = () => {
       console.log("hello there");
       document.documentElement.classList.add("dark");
       localStorage.setItem("darkMode", "true");
+      
+      document.documentElement.style = "background-color: #16181d;"
     } else {
       // remove, remove, i was stuck at this for 15 min 😂
       document.documentElement.classList.remove("dark");
       localStorage.setItem("darkMode", "false");
+
+      document.documentElement.style = "background-color: white;"
     }
   }, [isDarkMode]);
 
   const handleDarkMode = () => {
     setDarkMode(!isDarkMode);
   };
+
 
   return (
     <Container>
