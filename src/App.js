@@ -11,10 +11,33 @@ import {
   AiOutlineInstagram,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { container } from "./components/animationConfig/animationConfig";
+import { useEffect, useState } from "react";
 
 const App = () => {
-  document.body.style = "background: #16181d;";
+  const [isDarkMode, setDarkMode] = useState(true);
+
+  useEffect(() => {
+    setDarkMode(document.documentElement.classList.contains("dark"));
+  }, []);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      console.log("hello there");
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("darkMode", "true");
+    } else {
+      // remove, remove, i was stuck at this for 15 min 😂
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("darkMode", "false");
+    }
+  }, [isDarkMode]);
+
+  const handleDarkMode = () => {
+    setDarkMode(!isDarkMode);
+  };
+
   return (
     <Container>
       <Avatar />
@@ -32,7 +55,7 @@ const App = () => {
           <Span>Youtube</Span>
         </Link>
         <Link link="https://github.com/DanielCodex">
-          <ImGithub className="mr-2 mt-[2px] text-2xl text-white " />{" "}
+          <ImGithub className="mr-2 mt-[2px] text-2xl text-black dark:text-white " />{" "}
           <Span>Github</Span>
         </Link>
         <Link link="https://twitter.com/Daniel_codex">
@@ -56,6 +79,17 @@ const App = () => {
           <Span>Onlyfan</Span>
         </Link>
       </motion.div>
+      <DarkModeSwitch
+          size={40}
+          style={{
+            position: "absolute",
+            bottom: "5%",
+            right: "5%",
+            color: isDarkMode ? "white" : "black"
+          }}
+          checked={isDarkMode}
+          onChange={handleDarkMode}
+        />
     </Container>
   );
 };

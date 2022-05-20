@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import yo from "../images/yo.jpg";
+import dani from "../images/dani.png";
 
 const item = {
   hidden: { opacity: 0 },
@@ -16,12 +16,12 @@ function Avatar() {
         <motion.img
           whileHover={{
             scale: 1.1,
-            boxShadow: "0px 0px 10px 0px rgb(99, 102, 241)",
+            boxShadow: "0px 0px 10px 0px rgba(242,214,138, 1)",
           }}
           whileTap={{
             scale: 0.9,
           }}
-          src={yo}
+          src={dani}
           alt="the definition of gravity 😂"
           className="h-full w-full rounded-md object-cover"
         />

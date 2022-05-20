@@ -50,3 +50,22 @@
         </motion.li>
       </motion.ol>
 ```
+
+```js
+// last boxShadow for links:
+boxShadow: "0px 0px 10px 0px rgb(99, 102, 241)",
+```
+
+```js
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("darkMode", "true");
+    } else {
+      document.documentElement.classList.add("light");
+      localStorage.setItem("darkMode", "false");
+    }
+  }, [isDarkMode]);
+
+// dark mode experimentaion
+```

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 function Span({ children }) {
   return (
     <motion.span
-      className="text-2xl capitalize text-white"
+      className="text-2xl capitalize dark:text-white text-black"
     >
       {children}
     </motion.span>
